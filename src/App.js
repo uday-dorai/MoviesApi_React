@@ -3,7 +3,13 @@ import './App.css';
 import HeaderTag from './components/header.js';
 import DirectorsPage from './components/directorsPage.js';
 import MoviesPage from './components/moviesPage.js';
-import About from './components/about.js'
+import About from './components/about.js';
+import AddNewDirector from './components/addNewDirector';
+import UpdateDirector from './components/updateDirector';
+import AddNewMovie from './components/addNewMovie.js';
+import UpdateSingleMovie from './components/updateSingleMovie.js';
+
+
 
 // import Directors from './components/director.js'
 
@@ -23,8 +29,14 @@ class App extends Component {
           <Switch>
             
             <Route path ="/" exact component ={About} />
-            <Route path ="/directors" component ={DirectorsPage}/>
-            <Route path ="/movies" component ={MoviesPage}/>
+            <Route path ="/directors" exact component ={DirectorsPage}/>
+            <Route path ="/movies" exact component ={MoviesPage}/>
+            <Route path="/directors/new" component={AddNewDirector} />            
+            <Route path="/directors/:id/update" component={UpdateDirector} />            
+            <Route path="/movies/new" component={AddNewMovie} />
+            <Route path="/movies/:id/update" component={UpdateSingleMovie} />            
+
+
           </Switch>
           
           

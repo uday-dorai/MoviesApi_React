@@ -1,47 +1,56 @@
 import React, { Component } from 'react';
-import Directors from './directors.js'
+import Directors from './directorsList.js';
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import AddNewDirector from './addNewDirector'
+// import UpdateDirector from './updateDirector'
+
+
 
 class DirectorsPage extends Component {
     state = {
         director: [],
         status: false,
     };
-    componentDidMount() {
-        fetch('http://localhost:8000/api/directors')
+    async componentDidMount() {
+        await fetch('http://localhost:8000/api/directors')
             .then(response => response.json())
-            .then(data => (this.setState({ status: true, director: data })))
+            .then(data => (this.setState({ director: data })))
     }
 
+
     // Delete Single Director
-    delete=(e)=>{
+    delete = async (e) => {
         console.log('are u sure');
         const id = e.target.parentElement.parentElement.getAttribute('position');
         // console.log(id);
         const url = `http://localhost:8000/api/directors/${id}`;
-        fetch(url)
-        return fetch(url,{
-            method:'DELETE'
-            // headers: {
-            //     Accept: "application/json",
-            //     "Content-Type": "application/json",
-            // }
+        await fetch(url, {
+            method: 'DELETE'
         })
-        // .then(response => response.json())
-        // .then(data => {
-        //     console.log(data)
-        // }).catch(error =>{
-        //     console.log('error')
-        // })
-        this.componentDidMount();
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            }).catch(error => {
+                console.log('error')
+            })
+        await this.componentDidMount();
     }
+    editDirector =()=>{
+        
+    }
+    
 
 
     render() {
         return (
-            <div>
-                <Directors director={this.state.director} delete={this.delete}/> 
-            </div>
-             
+                <div>
+                <h1>Directors List</h1>
+                <Link to='/directors/new'>
+                    <button className='addBtnDirector'>+ add</button>
+                </Link>
+                <Directors director={this.state.director} delete={this.delete} editDirector={this.editDirector}/>
+            </div> 
         );
     }
 }

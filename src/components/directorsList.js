@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
-class Directorslist extends Component {
+class Directors extends Component{
     
-    render() {
-        return (
-            <div className='DirectorsBlock' position={this.props.list.id}>
+    render(){
+        return this.props.director.map((directorsData) =>(
+            // const ID={directorsData.id};
+            <div className='DirectorsBlock' position={directorsData.id}>
                 <div className= 'DirectorUL'>
-                    <p>Id: {this.props.list.id}</p>
-                    <p>Director : {this.props.list.director}</p>
-                    <button onClick={this.delete}>Update</button>
+                    <p>Id: {directorsData.id}</p>
+                    <p>Director : {directorsData.director}</p>
+                    
+                    <Link to={'/directors/'+(directorsData.id)+'/update'}>
+                        <button onClick={this.props.editDirector}>Update</button>
+                    </Link>
                     <button onClick={this.props.delete}>Delete</button>
-                         
                 </div>
             </div>
-
-        );
-
+        ));
     }
 }
 
-export default Directorslist;
+export default Directors;
