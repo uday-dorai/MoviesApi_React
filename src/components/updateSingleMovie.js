@@ -66,7 +66,7 @@ class UpdateSingleMovie extends Component{
         })
         .then(res =>{
             if(res.ok){
-                alert('movie has been added to the list')
+                alert(`movie with Id: ${this.props.match.params.id} has been updated`)
             }
         })
         .then(backToMovies =>{
@@ -84,83 +84,102 @@ class UpdateSingleMovie extends Component{
                 <h1>update Director</h1>
                 <form onSubmit={this.onSubmit}>
 
+                <div className='singleMoviesBox'>
                     <label>Title: </label>
                     <input name="Title"
                     type="text"
                     value={this.state.Title}
                     onChange ={this.changeHandler}></input>
-                    <br/>
+                    </div>
+                    
 
+                    <div className='singleMoviesBox'>
                     <label>Description: </label>
                     <input name="Description"
                     type="text"
                     value={this.state.Description}
                     onChange ={this.changeHandler}></input>
-                    <br/>
+                    </div>
+                   
+                    
 
+                    <div className='singleMoviesBox'>
                     <label>Director: </label>
                     <input name="Director"
                     type="text"
                     value={this.state.Director}
                     onChange ={this.changeHandler}></input>
-                    <br/>
-
+                    </div>
+                    
+                    
+                    <div className='singleMoviesBox'>
                     <label>Genre: </label>
                     <input name="Genre"
                     value={this.state.Genre}
                     onChange ={this.changeHandler}></input>
-                    <br/>
-
+                    </div>
+                    
+                    <div className='singleMoviesBox'>
                     <label>Year: </label>
                     <input name="Year"
                     type="number"
                     value={this.state.Year}
                     onChange ={this.changeHandler}></input>
-                    <br/>
-
-                    <label>Gross_Earning_in_Mil: </label>
+                    </div>
+                    
+                    
+                    <div className='singleMoviesBox'>
+                    <label>Gross Earning in Mil: </label>
                     <input name="Gross_Earning_in_Mil"
                     type="float"
                     value={this.state.Gross_Earning_in_Mil}
                     onChange ={this.changeHandler}></input>
-                    <br/>
-
+                    </div>
+                    
+                    
+                    <div className='singleMoviesBox'>
                     <label>Metascore: </label>
                     <input name="Metascore"
                     type="number"
                     value={this.state.Metascore}
                     onChange ={this.changeHandler}></input>
-                    <br/>
-
+                    </div>
+                    
+                   
+                    <div className='singleMoviesBox'>
                     <label>Rating: </label>
                     <input name="Rating"
                     type="float"
                     value={this.state.Rating}
                     onChange ={this.changeHandler}></input>
-                    <br/>
-
+                    </div>
+                    
+                    
+                    <div className='singleMoviesBox'>
                     <label>Runtime: </label>
                     <input name="Runtime"
                     type="number"
                     value={this.state.Runtime}
                     onChange ={this.changeHandler}></input>
-                    <br/>
-
+                    </div>
+                    
+                    <div className='singleMoviesBox'>
                     <label>Votes: </label>
                     <input name="Votes"
                     type="number"
                     value={this.state.Votes}
                     onChange ={this.changeHandler}></input>
-                    <br/>
-
-                    <label>Actor: </label>
-                    <input name="Actor"
-                    type="text"
-                    value={this.state.Actor}
-                    onChange ={this.changeHandler}></input>
-                    <br/>
+                    </div>
                     
-                    <button type='submit' className='addBtnDirector' >update</button>
+                    <div className='singleMoviesBox'>
+                        <label>Actor: </label>
+                        <input name="Actor"
+                        type="text"
+                        value={this.state.Actor}
+                        onChange ={this.changeHandler}></input>
+                    </div>
+                    
+                    <button type='submit' className='addBtnMovie' >update</button>
                     
                 </form>
                 

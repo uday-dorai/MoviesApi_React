@@ -8,7 +8,6 @@ class Directors extends Component{
             // const ID={directorsData.id};
             <div className='DirectorsBlock' position={directorsData.id}>
                 <div className= 'DirectorUL'>
-                    <p>Id: {directorsData.id}</p>
                     <p>Director : {directorsData.director}</p>
                     
                     <Link to={'/directors/'+(directorsData.id)+'/update'}>

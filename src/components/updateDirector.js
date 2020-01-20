@@ -43,9 +43,10 @@ class UpdateDirector extends Component{
         .then(res =>{
             if(res.ok){
                 alert('director has been added to the list')
-            }else{
-
             }
+        })
+        .then(backToDirectorsPage => {
+            this.props.history.push("/directors/");
         })
         
             
@@ -56,7 +57,7 @@ class UpdateDirector extends Component{
         // const {director} = this.state
         return (
             <div className='addDirectorContainer'>
-                <h1>update Director</h1>
+                <h3><u>update Director</u></h3>
                 <form onSubmit={this.onSubmit}>
                     <input type='text' 
                     className='addNewDirector' 
@@ -66,9 +67,7 @@ class UpdateDirector extends Component{
                     onChange ={this.changeHandler}
                     defaultValue={this.state}
                     />
-                    {/* <Link to='/directors'> */}
-                        <button type='submit' className='addBtnDirector' >update</button>
-                    {/* </Link> */}
+                    <button type='submit' className='addBtnDirectorAndMovies' >update</button>
                     
                 </form>
                 

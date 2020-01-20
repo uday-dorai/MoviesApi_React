@@ -44,8 +44,8 @@ class AddNewDirector extends Component{
         // const {director} = this.state
         return (
             <div className='addDirectorContainer'>
-                <h1>Director Name</h1>
-                <form onSubmit={this.onSubmit}>
+                <h3>Enter new Director to the List</h3>
+                <form onSubmit={this.onSubmit} className='addDirectorForm'>
                     <input type='text' 
                     className='addNewDirector' 
                     placeholder ='Add director' 
@@ -54,7 +54,7 @@ class AddNewDirector extends Component{
                     onChange ={this.changeHandler}
                     />
                         
-                    <button type='submit' className='addBtnDirector' >+add</button>
+                    <button type='submit' className='addBtnDirectorAndMovies' >+add</button>
                     
                 </form>
                 

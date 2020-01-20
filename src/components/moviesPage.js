@@ -11,43 +11,41 @@ class MoviesPage extends Component{
     };
 
     async componentDidMount() {
-        
         await fetch('http://localhost:8000/api/movies')
-        .then(response => response.json())
-        .then(data => (this.setState({ movies: data })))
+                .then(response => response.json())
+                .then(data => (this.setState({ movies: data })))
     }
 
 
-    delete=async (e)=>{
+    delete = async (e)=>{
         console.log('are u sure');
         const id = e.target.parentElement.parentElement.getAttribute('position');
         console.log(id);
         const url = `http://localhost:8000/api/movies/${id}`;
         await fetch(url,{
             method:'DELETE'
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                alert('movie has been deleted');
             })
+            .then(data => {
+                // console.log(data);
+                alert('movie has been deleted');
+            });
+            // .then(backToMoviesPage =>{
+            //     this.props.history.push("/movies/");
+            // })
+
         await this.componentDidMount();
     }
 
     render() {
         // console.log(this.state.movies)
         return (
-            <div>
+            <div className='moviesAndDirectorPage'>
                 {/* <Router> */}
                     <h1>Movies List</h1>
                     <Link to='/movies/new'>
-                        <button className='addBtnDirector'>+ add</button>
+                        <button className='addBtnForDirectorAndMovies'>+ add new movie to the list</button>
                     </Link>
                     <Movies movies={this.state.movies} delete={this.delete}/> 
-                    {/* <Switch> */}
-                        {/* <Route path="/directors/new" component={AddNewMovie} /> */}
-                    {/* </Switch> */}
-                {/* </Router> */}
                 
             </div>
              

@@ -8,10 +8,10 @@ class About extends Component {
         return (
             <div className='about' >
                 <Link to='/movies'>
-                    <div className='homeMovies'>movies</div>
+                    <button className='homeMovies'>Movies</button>
                 </Link>
                 <Link to='/directors'>
-                    <div className='homeMovies'>directors</div>
+                    <button className='homeMovies'>Directors</button>
                 </Link>
 
             </div>

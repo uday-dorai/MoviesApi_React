@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import HeaderTag from './components/header.js';
 import DirectorsPage from './components/directorsPage.js';
-import MoviesPage from './components/moviesPage.js';
 import About from './components/about.js';
 import AddNewDirector from './components/addNewDirector';
 import UpdateDirector from './components/updateDirector';
+import GetSingleMovie from './components/getSingleMovie';
+import GetSingleDirector from './components/getSingleDirector';
+
+import MoviesPage from './components/moviesPage.js';
 import AddNewMovie from './components/addNewMovie.js';
 import UpdateSingleMovie from './components/updateSingleMovie.js';
 
@@ -35,6 +38,8 @@ class App extends Component {
             <Route path="/directors/:id/update" component={UpdateDirector} />            
             <Route path="/movies/new" component={AddNewMovie} />
             <Route path="/movies/:id/update" component={UpdateSingleMovie} />            
+            <Route path="/movies/:id" component={GetSingleMovie} />            
+            <Route path="/directors/:id" component={GetSingleDirector} />            
 
 
           </Switch>

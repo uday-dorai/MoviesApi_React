@@ -5,7 +5,7 @@ function headerTag(){
     return (
         <div className='header'>
             <Link to='/'>
-                <h2>home</h2>
+                <button className='homeButton'>Home</button>
             </Link>
             <h1>Movies and Director</h1>
         </div>
