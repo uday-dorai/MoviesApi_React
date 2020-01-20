@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
-import  { Redirect } from 'react-router-dom'
+// import  { Redirect } from 'react-router-dom';
 
 
 class UpdateDirector extends Component{
@@ -68,6 +68,10 @@ class UpdateDirector extends Component{
                     defaultValue={this.state}
                     />
                     <button type='submit' className='addBtnDirectorAndMovies' >update</button>
+
+                    <Link to='/directors'>
+                        <button className='addBtnDirectorAndMovies' >cancel</button>    
+                    </Link>
                     
                 </form>
                 

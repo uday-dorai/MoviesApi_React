@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import { Link } from 'react-router-dom';
-import  { withRouter  } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import  { Link, withRouter  } from 'react-router-dom';
 
 
 class UpdateSingleMovie extends Component{
@@ -179,7 +179,13 @@ class UpdateSingleMovie extends Component{
                         onChange ={this.changeHandler}></input>
                     </div>
                     
-                    <button type='submit' className='addBtnMovie' >update</button>
+                    <div>
+                    <button type='submit' className='addBtnMovie' >update </button>
+                    <Link to='/movies'>
+                        <button type='submit' className='addBtnMovie' >back </button>
+                    </Link>
+                    </div>
+                    {/* <button type='submit' className='addBtnMovie' >update</button> */}
                     
                 </form>
                 

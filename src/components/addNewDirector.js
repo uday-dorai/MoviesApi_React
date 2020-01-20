@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -55,6 +56,9 @@ class AddNewDirector extends Component{
                     />
                         
                     <button type='submit' className='addBtnDirectorAndMovies' >+add</button>
+                    <Link to='/directors'>
+                        <button className='addBtnDirectorAndMovies' >cancel</button>    
+                    </Link>
                     
                 </form>
                 

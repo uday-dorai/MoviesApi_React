@@ -157,8 +157,12 @@ class AddNewMovie extends Component{
                     </div>
                     
                     
-
-                    <button type='submit' className='addBtnMovie' >+ add</button>
+                    <div>
+                    <button type='submit' className='addBtnMovie' >+ add </button>
+                    <Link to='/movies'>
+                        <button type='submit' className='addBtnMovie' >back </button>
+                    </Link>
+                    </div>
                     
                 </form>
                 
